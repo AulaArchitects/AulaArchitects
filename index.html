@@ -204,7 +204,9 @@
     // Landing click
     landing.addEventListener('click', () => {
       landing.classList.add('hidden');
-      page.classList.add('visible');
+      setTimeout(() => {
+  page.classList.add('visible');
+}, 200);
       document.body.style.overflow = 'auto';
     });
 
