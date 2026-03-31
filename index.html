@@ -12,7 +12,7 @@
       background: #ffffff;
       color: #111;
       -webkit-font-smoothing: antialiased;
-      overflow: hidden;
+      text-rendering: optimizeLegibility;
     }
 
     a {
@@ -30,11 +30,12 @@
       justify-content: center;
       z-index: 100;
       cursor: pointer;
-      transition: opacity 1.8s ease;
+      transition: opacity 1.4s ease;
     }
 
     .landing img {
-      width: 250px;
+      width: 180px;
+      height: auto;
     }
 
     .landing.hidden {
@@ -49,12 +50,6 @@
       flex-direction: column;
       padding: 24px;
       position: relative;
-      opacity: 0;
-      transition: opacity 1.8s ease;
-    }
-
-    .page.visible {
-      opacity: 1;
     }
 
     header {
@@ -86,7 +81,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: opacity 1s ease;
+      transition: opacity 0.9s ease;
     }
 
     .image-panel img {
@@ -124,7 +119,7 @@
       font-size: 14px;
     }
 
-    /* TOGGLE STATE */
+    /* ABOUT STATE */
     .is-about .image-panel {
       opacity: 0;
     }
@@ -132,6 +127,30 @@
     .is-about .text-panel {
       opacity: 1;
       pointer-events: auto;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 18px 16px;
+      }
+
+      .image-panel img {
+        width: 320px;
+      }
+
+      .text-inner {
+        width: min(92vw, 640px);
+      }
+
+      .intro {
+        font-size: 15px;
+      }
+
+      .contact-text,
+      header,
+      .bottom-bar {
+        font-size: 14px;
+      }
     }
 
   </style>
@@ -201,13 +220,9 @@
     const aboutButton = document.getElementById('aboutButton');
     const textPanel = document.getElementById('textPanel');
 
-    // Landing click
+    // Landing fade only (no layout shift)
     landing.addEventListener('click', () => {
       landing.classList.add('hidden');
-      setTimeout(() => {
-  page.classList.add('visible');
-}, 200);
-      document.body.style.overflow = 'auto';
     });
 
     // About open
