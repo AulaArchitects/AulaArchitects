@@ -6,6 +6,24 @@
   <title>Aula Architects</title>
 
   <style>
+    /* hide default cursor */
+body {
+  cursor: none;
+}
+
+/* custom circle cursor */
+.cursor {
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
