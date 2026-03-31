@@ -169,6 +169,15 @@ body {
     }
   </style>
 </head>
+  <div class="cursor"></div>
+  <script>
+  const cursor = document.querySelector('.cursor');
+
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+</script>
 <body>
   <div class="page" id="page">
 
