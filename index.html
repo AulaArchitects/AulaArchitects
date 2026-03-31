@@ -1,27 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aula Architects</title>
-  <meta name="description" content="Aula Architects — architecture and design studio." />
+
   <style>
-    :root {
-      --bg: #ffffff;
-      --text: #111111;
-      --muted: #111111;
-    }
-
-    * { box-sizing: border-box; }
-
-    html, body {
+    body {
       margin: 0;
-      min-height: 100%;
-      background: var(--bg);
-      color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111;
       -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
     }
 
     a {
@@ -33,25 +23,13 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      padding: 22px 24px 18px;
+      padding: 24px;
     }
 
-    .top {
+    header {
       display: flex;
-      align-items: flex-start;
       justify-content: space-between;
-      gap: 24px;
       font-size: 14px;
-      line-height: 1.2;
-    }
-
-    .brand {
-      font-weight: 400;
-      letter-spacing: 0;
-    }
-
-    .social {
-      white-space: nowrap;
     }
 
     main {
@@ -59,119 +37,84 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px 0;
     }
 
     .content {
-      width: min(100%, 640px);
       text-align: center;
+      max-width: 560px;
     }
 
-    .logo {
-      width: 90px;
-      height: autopx;
-      margin: 0 auto 34px;
-      border: 5px solid rgba(0,0,0,0.16);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      background: rgba(255,255,255,0.35);
+    /* LOGO */
+    .logo img {
+      width: 80px;
+      margin-bottom: 24px;
     }
 
+    /* TEXT */
     .intro {
-       margin: 0 auto;
-  font-size: 20px;
-  line-height: 1.7;
-  max-width: 640px;;
+      font-size: 15px;
+      line-height: 1.45;
     }
 
     .spacer {
-      height: 28px;
+      height: 16px;
     }
 
-    .contact-copy,
-    .contact-link,
-    .follow {
-      font-size: 18px;
-      line-height: 1.65;
-      font-weight: 400;
-    }
-
-    .contact-link {
-      display: inline-block;
-      margin-top: 2px;
-    }
-
-    .follow {
-      margin-top: 28px;
+    .contact {
+      font-size: 15px;
+      line-height: 1.45;
     }
 
     footer {
       display: flex;
       justify-content: flex-end;
       font-size: 14px;
-      line-height: 1.2;
-    }
-
-    @media (max-width: 720px) {
-      .page {
-        padding: 18px 16px 16px;
-      }
-
-      .top,
-      footer {
-        font-size: 13px;
-      }
-
-      .logo {
-        width: 112px;
-        height: 34px;
-        margin-bottom: 28px;
-      }
-
-      .intro,
-      .contact-copy,
-      .contact-link,
-      .follow {
-        font-size: 16px;
-        line-height: 1.6;
-      }
     }
   </style>
 </head>
+
 <body>
   <div class="page">
-    <header class="top">
-      <div class="brand">Aula Architects</div>
-      <a class="social" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+
+    <header>
+      <div>Aula Architects</div>
+      <a href="#">Instagram</a>
     </header>
 
     <main>
       <div class="content">
+
         <div class="logo">
-  <img src="County Armagh_Final.jpg" alt="Aula Architects logo">
-</div>
+          <img src="logo.jpg" alt="Aula Architects">
+        </div>
+
         <p class="intro">
           Aula Architects are a Belfast and London based architecture and design studio with a passion for constructing thoughtful and timeless architecture. The studio holds extensive experience across a broad range of building scales and uses and is currently developing the design of spaces for living, work, and the arts.
         </p>
 
         <div class="spacer"></div>
 
-        <div class="contact-copy">If you would like to see how we could work together, please get in touch at</div>
-        <a class="contact-link" href="mailto:mail@aulaarchitects.com">mail@aulaarchitects.com</a>
-
-        <div class="follow">
-          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+        <div class="contact">
+          If you would like to see how we could work together, please get in touch at
         </div>
+
+        <div class="contact">
+          <a href="mailto:mail@aulaarchitects.com">mail@aulaarchitects.com</a>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="contact">
+          <a href="#">Instagram</a>
+        </div>
+
       </div>
     </main>
 
     <footer>
       <a href="mailto:mail@aulaarchitects.com">Contact</a>
     </footer>
+
   </div>
 </body>
 </html>
