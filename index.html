@@ -168,6 +168,28 @@ body {
       }
     }
   </style>
+  /* LANDING */
+.landing {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: pointer;
+  transition: opacity 0.6s ease;
+}
+
+.landing img {
+  width: 120px;
+  height: auto;
+}
+
+.landing.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 </head>
   <div class="cursor"></div>
   <script>
@@ -179,6 +201,10 @@ body {
   });
 </script>
 <body>
+  <!-- LANDING OVERLAY -->
+<div class="landing" id="landing">
+  <img src="logo.jpg" alt="Aula Architects">
+</div>
   <div class="page" id="page">
 
     <header>
@@ -247,5 +273,12 @@ body {
     e.stopPropagation();
   });
   </script>
+  <script>
+  const landing = document.getElementById('landing');
+
+  landing.addEventListener('click', () => {
+    landing.classList.add('hidden');
+  });
+</script>
 </body>
 </html>
