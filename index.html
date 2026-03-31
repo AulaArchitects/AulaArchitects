@@ -200,11 +200,25 @@
 
   <script>
     const page = document.getElementById('page');
-    const aboutButton = document.getElementById('aboutButton');
+  const aboutButton = document.getElementById('aboutButton');
 
-    aboutButton.addEventListener('click', () => {
-      page.classList.toggle('is-about');
-    });
+  // Open
+  aboutButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    page.classList.add('is-about');
+  });
+
+  // Close when clicking anywhere
+  document.addEventListener('click', () => {
+    page.classList.remove('is-about');
+  });
+
+  // Prevent closing when clicking inside the text
+  const textPanel = document.querySelector('.text-panel');
+
+  textPanel.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
   </script>
 </body>
 </html>
