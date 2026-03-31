@@ -4,13 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aula Architects</title>
-  <meta name="description" content="Aula Architects — architecture practice." />
+  <meta name="description" content="Aula Architects — architecture and design studio." />
   <style>
     :root {
-      --bg: #f4f1eb;
+      --bg: #f6f3ec;
       --text: #111111;
-      --muted: #6f6a63;
-      --line: rgba(17, 17, 17, 0.15);
+      --muted: #111111;
     }
 
     * { box-sizing: border-box; }
@@ -18,12 +17,9 @@
     html, body {
       margin: 0;
       min-height: 100%;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -37,161 +33,143 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      padding: 20px;
+      padding: 22px 24px 18px;
     }
 
-    header {
+    .top {
       display: flex;
-      justify-content: space-between;
       align-items: flex-start;
+      justify-content: space-between;
       gap: 24px;
       font-size: 14px;
       line-height: 1.2;
-      letter-spacing: 0.01em;
     }
 
     .brand {
-      max-width: 240px;
+      font-weight: 400;
+      letter-spacing: 0;
     }
 
-    nav {
-      display: flex;
-      gap: 18px;
+    .social {
+      white-space: nowrap;
     }
 
     main {
       flex: 1;
-      display: grid;
-      grid-template-columns: 1fr minmax(280px, 520px);
+      display: flex;
       align-items: center;
-      gap: 24px;
-      padding: 40px 0 56px;
+      justify-content: center;
+      padding: 40px 0;
     }
 
-    .statement {
-      justify-self: end;
-      width: 100%;
+    .content {
+      width: min(100%, 640px);
+      text-align: center;
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(42px, 7vw, 96px);
-      line-height: 0.95;
-      letter-spacing: -0.055em;
+    .logo {
+      width: 132px;
+      height: 38px;
+      margin: 0 auto 34px;
+      border: 1px solid rgba(0,0,0,0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.35);
+    }
+
+    .intro {
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.65;
+      font-weight: 400;
+      max-width: 620px;
+    }
+
+    .spacer {
+      height: 28px;
+    }
+
+    .contact-copy,
+    .contact-link,
+    .follow {
+      font-size: 18px;
+      line-height: 1.65;
       font-weight: 400;
     }
 
-    .meta {
-      margin-top: 22px;
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 20px;
-      font-size: 14px;
-      color: var(--muted);
+    .contact-link {
+      display: inline-block;
+      margin-top: 2px;
     }
 
-    .panel {
-      display: none;
-      max-width: 420px;
-      font-size: 14px;
-      line-height: 1.45;
-      color: var(--muted);
-      padding-top: 10px;
-    }
-
-    .panel:target {
-      display: block;
-    }
-
-    .panel p {
-      margin: 0 0 10px;
-    }
-
-    .panel-title {
-      color: var(--text);
-      margin-bottom: 12px;
+    .follow {
+      margin-top: 28px;
     }
 
     footer {
       display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      font-size: 12px;
-      color: var(--muted);
-      padding-top: 10px;
+      justify-content: flex-end;
+      font-size: 14px;
+      line-height: 1.2;
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 720px) {
       .page {
-        padding: 16px;
+        padding: 18px 16px 16px;
       }
 
-      header,
+      .top,
       footer {
-        flex-direction: column;
-        gap: 10px;
+        font-size: 13px;
       }
 
-      nav {
-        gap: 14px;
+      .logo {
+        width: 112px;
+        height: 34px;
+        margin-bottom: 28px;
       }
 
-      main {
-        grid-template-columns: 1fr;
-        align-items: start;
-        padding: 56px 0 32px;
-      }
-
-      .statement {
-        justify-self: start;
-      }
-
-      .meta {
-        grid-template-columns: 1fr;
+      .intro,
+      .contact-copy,
+      .contact-link,
+      .follow {
+        font-size: 16px;
+        line-height: 1.6;
       }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <header>
+    <header class="top">
       <div class="brand">Aula Architects</div>
-      <nav>
-        <a href="#info">Info</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <a class="social" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
     </header>
 
     <main>
-      <section id="info" class="panel">
-        <div class="panel-title">Info</div>
-        <p>Aula Architects is an architecture practice working across residential, interiors, and adaptive reuse projects.</p>
-        <p>Replace this text with one short paragraph only. Keep it restrained and factual.</p>
-      </section>
+      <div class="content">
+        <div class="logo">Aula</div>
+        <p class="intro">
+          Aula Architects are a Belfast and London based architecture and design studio with a passion for constructing thoughtful and timeless architecture. The studio holds extensive experience across a broad range of building scales and uses and is currently developing the design of spaces for living, work, and the arts.
+        </p>
 
-      <section id="contact" class="panel">
-        <div class="panel-title">Contact</div>
-        <p>hello@aulaarchitects.com</p>
-        <p>London, UK</p>
-        <p>Instagram / LinkedIn</p>
-      </section>
+        <div class="spacer"></div>
 
-      <section class="statement">
-        <h1>An office of architecture working across London and beyond.</h1>
-        <div class="meta">
-          <div>Residential</div>
-          <div>Interiors</div>
-          <div>Adaptive Reuse</div>
-          <div>Selected projects on request</div>
+        <div class="contact-copy">If you would like to see how we could work together, please get in touch at</div>
+        <a class="contact-link" href="mailto:mail@aulaarchitects.com">mail@aulaarchitects.com</a>
+
+        <div class="follow">
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
         </div>
-      </section>
+      </div>
     </main>
 
     <footer>
-      <div>© Aula Architects</div>
-      <div>This version is intentionally minimal.</div>
+      <a href="mailto:mail@aulaarchitects.com">Contact</a>
     </footer>
   </div>
 </body>
