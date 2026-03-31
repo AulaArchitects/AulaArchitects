@@ -29,8 +29,6 @@
       display: flex;
       justify-content: space-between;
       font-size: 14px;
-      position: relative;
-      z-index: 2;
     }
 
     main {
@@ -47,7 +45,6 @@
       text-align: center;
     }
 
-    /* IMAGE */
     .logo img {
       width: 420px;
       max-width: 90vw;
@@ -61,15 +58,14 @@
       position: fixed;
       left: 24px;
       bottom: 24px;
-      z-index: 3;
+      z-index: 10;
     }
 
     .about-trigger {
       font-size: 14px;
-      cursor: default;
     }
 
-    /* OVERLAY (CENTER TEXT) */
+    /* OVERLAY */
     .overlay {
       position: fixed;
       inset: 0;
@@ -77,10 +73,9 @@
       align-items: center;
       justify-content: center;
       opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s ease;
-      z-index: 2;
+      transition: opacity 0.25s ease;
       pointer-events: none;
+      z-index: 5;
     }
 
     .overlay-panel {
@@ -88,7 +83,7 @@
       max-width: 90vw;
       text-align: center;
       background: rgba(255,255,255,0.9);
-      padding: 12px 16px;
+      padding: 16px;
     }
 
     .intro,
@@ -102,20 +97,20 @@
       height: 16px;
     }
 
-    /* SHOW ON HOVER */
+    /* 🔥 THIS IS THE FIX */
+    .page:hover .overlay {
+      opacity: 0;
+    }
+
     .about-wrap:hover ~ .overlay {
       opacity: 1;
-      visibility: visible;
     }
 
     footer {
       display: flex;
       justify-content: flex-end;
       font-size: 14px;
-      position: relative;
-      z-index: 2;
     }
-
   </style>
 </head>
 
@@ -140,7 +135,7 @@
       <div class="about-trigger">About</div>
     </div>
 
-    <!-- CENTER OVERLAY -->
+    <!-- CENTER TEXT -->
     <div class="overlay">
       <div class="overlay-panel">
 
@@ -153,6 +148,7 @@
         <div class="contact">
           If you would like to see how we could work together, please get in touch at
         </div>
+
         <div class="contact">
           <a href="mailto:mail@aulaarchitects.com">mail@aulaarchitects.com</a>
         </div>
@@ -163,121 +159,6 @@
           <a href="https://www.instagram.com/aulaarchitects/" target="_blank">Instagram</a>
         </div>
 
-      </div>
-    </div>
-
-    <footer>
-      <a href="mailto:mail@aulaarchitects.com">Contact</a>
-    </footer>
-
-  </div>
-</body>
-</html>      align-items: center;
-      justify-content: center;
-    }
-
-    .content {
-      width: 420px;
-      max-width: 90vw;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    /* IMAGE */
-    .logo img {
-      width: 420px;
-      max-width: 90vw;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* TEXT */
-    .intro,
-    .contact {
-      font-size: 14px;
-      line-height: 1.4;
-    }
-
-    .spacer {
-      height: 16px;
-    }
-
-    footer {
-      display: flex;
-      justify-content: flex-end;
-      font-size: 14px;
-    }
-
-    /* ABOUT (BOTTOM LEFT) */
-    .about-wrap {
-      position: fixed;
-      left: 24px;
-      bottom: 24px;
-    }
-
-    .about-trigger {
-      font-size: 14px;
-    }
-
-    .about-panel {
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s ease;
-      width: 420px;
-      max-width: calc(100vw - 48px);
-      margin-top: 12px;
-      font-size: 14px;
-      line-height: 1.4;
-    }
-
-    .about-wrap:hover .about-panel {
-      opacity: 1;
-      visibility: visible;
-    }
-
-  </style>
-</head>
-
-<body>
-  <div class="page">
-
-    <header>
-      <div>Aula Architects</div>
-      <a href="https://www.instagram.com/aulaarchitects/" target="_blank">Instagram</a>
-    </header>
-
-    <main>
-      <div class="content">
-        <div class="logo">
-          <img src="County Armagh_Final.jpg" alt="Aula Architects">
-        </div>
-      </div>
-    </main>
-
-    <!-- ABOUT -->
-    <div class="about-wrap">
-      <div class="about-trigger">About</div>
-
-      <div class="about-panel">
-        <p class="intro">
-          Aula Architects are a Belfast and London based architecture and design studio with a passion for constructing thoughtful and timeless architecture. The studio holds extensive experience across a broad range of building scales and uses and is currently developing the design of spaces for living, work, and the arts.
-        </p>
-
-        <div class="spacer"></div>
-
-        <div class="contact">
-          If you would like to see how we could work together, please get in touch at
-        </div>
-        <div class="contact">
-          <a href="mailto:mail@aulaarchitects.com">mail@aulaarchitects.com</a>
-        </div>
-
-        <div class="spacer"></div>
-
-        <div class="contact">
-          <a href="https://www.instagram.com/aulaarchitects/" target="_blank">Instagram</a>
-        </div>
       </div>
     </div>
 
