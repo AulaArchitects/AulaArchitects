@@ -254,10 +254,6 @@
       .slideshow {
         width: 100%;
       }
-
-      .title {
-        font-size: clamp(2.2rem, 8vw, 4.1rem);
-      }
     }
 
     @media (max-width: 640px) {
@@ -279,11 +275,10 @@
       }
 
       .overlay-title {
-        position: relative;
-        inset: auto;
-        left: auto;
-        transform: none;
-        margin-top: 16px;
+        position: absolute;
+        inset: 50% auto auto 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 0;
         text-align: center;
       }
 
@@ -299,10 +294,6 @@
       .about-copy {
         top: 0;
         bottom: 0;
-      }
-
-      .about-brand {
-        font-size: 4.4rem;
       }
 
       .nav-square {
@@ -345,7 +336,7 @@
             <img src="02_Morello.jpg" alt="Aula Architects project image">
           </figure>
           <figure class="slide">
-            <img src="03.Morello.jpg" alt="Aula Architects project image">
+            <img src="03_Morello.jpg" alt="Aula Architects project image">
           </figure>
         </div>
 
@@ -374,8 +365,15 @@
       document.getElementById('aboutButtonLeft'),
       document.getElementById('aboutButtonRight')
     ];
+    const slideshow = document.querySelector('.slideshow');
     const slides = Array.from(document.querySelectorAll('.slide'));
     let activeIndex = 0;
+
+    function showSlide(index) {
+      slides[activeIndex].classList.remove('is-active');
+      activeIndex = (index + slides.length) % slides.length;
+      slides[activeIndex].classList.add('is-active');
+    }
 
     document.addEventListener('mousemove', (event) => {
       cursorDot.style.left = `${event.clientX}px`;
@@ -404,14 +402,21 @@
       page.classList.remove('is-about');
     });
 
+    if (slideshow) {
+      slideshow.addEventListener('click', () => {
+        if (page.classList.contains('is-about')) {
+          return;
+        }
+        showSlide(activeIndex + 1);
+      });
+    }
+
     if (slides.length > 1) {
       window.setInterval(() => {
         if (page.classList.contains('is-about')) {
           return;
         }
-        slides[activeIndex].classList.remove('is-active');
-        activeIndex = (activeIndex + 1) % slides.length;
-        slides[activeIndex].classList.add('is-active');
+        showSlide(activeIndex + 1);
       }, 4200);
     }
   </script>
